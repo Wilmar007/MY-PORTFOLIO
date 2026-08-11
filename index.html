@@ -6,7 +6,6 @@
     <title>Wilmar's Professional Portfolio</title>
     <style>
         :root {
-            --primary-glow: #38bdf8;
             --card-bg: rgba(255, 255, 255, 0.92);
             --text-dark: #0f172a;
             --text-muted: #475569;
@@ -23,8 +22,8 @@
             position: relative;
         }
 
-        /* Floating Background Orbs Animation */
-        .bg-animations {
+        /* Floating Small Bubbles Animation */
+        .bubbles-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -35,54 +34,42 @@
             pointer-events: none;
         }
 
-        .orb {
+        .bubble {
             position: absolute;
+            bottom: -50px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.45;
-            animation: floatOrb 12s infinite alternate ease-in-out;
+            animation: riseUp linear infinite;
         }
 
-        .orb-1 {
-            width: 350px;
-            height: 350px;
-            background: #4f46e5;
-            top: -10%;
-            left: -10%;
-            animation-duration: 14s;
-        }
-
-        .orb-2 {
-            width: 450px;
-            height: 450px;
-            background: #0ea5e9;
-            bottom: -20%;
-            right: -10%;
-            animation-duration: 18s;
-            animation-delay: -3s;
-        }
-
-        .orb-3 {
-            width: 300px;
-            height: 300px;
-            background: #ec4899;
-            top: 40%;
-            left: 60%;
-            animation-duration: 10s;
-            animation-delay: -5s;
-        }
-
-        @keyframes floatOrb {
+        @keyframes riseUp {
             0% {
-                transform: translateY(0px) translateX(0px) scale(1);
+                transform: translateY(0) translateX(0);
+                opacity: 0;
             }
-            50% {
-                transform: translateY(40px) translateX(30px) scale(1.1);
+            20% {
+                opacity: 0.8;
+            }
+            80% {
+                opacity: 0.8;
             }
             100% {
-                transform: translateY(-40px) translateX(-30px) scale(0.95);
+                transform: translateY(-110vh) translateX(30px);
+                opacity: 0;
             }
         }
+
+        /* Generate multiple bubbles with different sizes, positions, and speeds */
+        .bubble:nth-child(1) { width: 15px; height: 15px; left: 10%; animation-duration: 8s; animation-delay: 0s; }
+        .bubble:nth-child(2) { width: 25px; height: 25px; left: 20%; animation-duration: 12s; animation-delay: 2s; }
+        .bubble:nth-child(3) { width: 10px; height: 10px; left: 35%; animation-duration: 7s; animation-delay: 1s; }
+        .bubble:nth-child(4) { width: 30px; height: 30px; left: 50%; animation-duration: 15s; animation-delay: 4s; }
+        .bubble:nth-child(5) { width: 18px; height: 18px; left: 65%; animation-duration: 9s; animation-delay: 3s; }
+        .bubble:nth-child(6) { width: 12px; height: 12px; left: 80%; animation-duration: 11s; animation-delay: 5s; }
+        .bubble:nth-child(7) { width: 22px; height: 22px; left: 90%; animation-duration: 13s; animation-delay: 1.5s; }
+        .bubble:nth-child(8) { width: 16px; height: 16px; left: 28%; animation-duration: 10s; animation-delay: 6s; }
+        .bubble:nth-child(9) { width: 20px; height: 20px; left: 75%; animation-duration: 14s; animation-delay: 2.5s; }
 
         /* Hero Section Styling */
         .hero {
@@ -182,11 +169,17 @@
 </head>
 <body>
 
-    <!-- Floating Background Orbs Animation Elements -->
-    <div class="bg-animations">
-        <div class="orb orb-1"></div>
-        <div class="orb-2"></div>
-        <div class="orb-3"></div>
+    <!-- Small Floating Bubbles Background Elements -->
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
     </div>
 
     <!-- Hero Section -->
