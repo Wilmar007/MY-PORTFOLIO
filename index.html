@@ -235,13 +235,23 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 40px;
+            padding: 24px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            height: 520px; /* Gives each card a consistent spacious vertical height */
+            box-sizing: border-box;
         }
 
         .showcase-box h3 {
             margin-top: 0;
-            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .showcase-box p {
+            margin-bottom: 12px;
+            color: var(--text-muted);
         }
 
         a.btn-small {
@@ -249,11 +259,12 @@
             background: transparent;
             border: 1px solid var(--accent-glow);
             color: var(--accent-glow);
-            padding: 8px 18px;
+            padding: 6px 14px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            align-self: flex-start;
             transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         }
 
@@ -265,10 +276,10 @@
 
         iframe {
             width: 100%;
-            height: 400px;
+            flex-grow: 1; /* Automatically stretches the iframe to fill the remaining space in the card */
             border: none;
             border-radius: 10px;
-            margin-top: 20px;
+            margin-top: 15px;
             background: #000;
         }
 
@@ -326,6 +337,7 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo">WILMAR.PORTFOLIO</div>
         <ul>
@@ -338,6 +350,7 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="profile-img-container">
             <img src="WILMAR.png" alt="Wilmar M. Matawaran" class="profile-img">
@@ -350,6 +363,7 @@
 
     <div class="container">
 
+        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
@@ -358,6 +372,7 @@
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services">
             <h2>Services & Expertise</h2>
             <div class="grid-3">
@@ -376,6 +391,7 @@
             </div>
         </section>
 
+        <!-- Tools & Technologies Section -->
         <section id="tools">
             <h2>Tools & Technologies</h2>
             <div class="tools-grid">
@@ -402,92 +418,95 @@
             </div>
         </section>
 
+        <!-- Learning Modules (PDFs) Section in 4 Columns -->
         <section id="modules">
             <h2>Learning Modules (PDFs)</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
 
             <div class="grid-4">
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>Circular Motion</h3>
-                    <p style="font-size: 0.9rem;">Principles of circular motion.</p>
+                    <p style="font-size: 0.85rem;">Principles of circular motion.</p>
                     <a class="btn-small" href="MODULES/CIRCULAR%20MOTION.pdf" target="_blank">Open PDF</a>
                     <iframe src="MODULES/CIRCULAR%20MOTION.pdf" title="Circular Motion PDF"></iframe>
                 </div>
 
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>Electricity</h3>
-                    <p style="font-size: 0.9rem;">Notes on electrical concepts.</p>
+                    <p style="font-size: 0.85rem;">Notes on electrical concepts.</p>
                     <a class="btn-small" href="MODULES/ELECTRICITY.pdf" target="_blank">Open PDF</a>
                     <iframe src="MODULES/ELECTRICITY.pdf" title="Electricity PDF"></iframe>
                 </div>
 
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>Light, Sound, Heat</h3>
-                    <p style="font-size: 0.9rem;">Thermodynamics & optics.</p>
+                    <p style="font-size: 0.85rem;">Thermodynamics & optics.</p>
                     <a class="btn-small" href="MODULES/Light%20Sound%20and%20Heat.pdf" target="_blank">Open PDF</a>
                     <iframe src="MODULES/Light%20Sound%20and%20Heat.pdf" title="Light Sound and Heat PDF"></iframe>
                 </div>
 
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>Nature of Force</h3>
-                    <p style="font-size: 0.9rem;">Forces & mechanical interactions.</p>
+                    <p style="font-size: 0.85rem;">Forces & mechanical interactions.</p>
                     <a class="btn-small" href="MODULES/THE%20NATURE%20OF%20FORCE.pdf" target="_blank">Open PDF</a>
                     <iframe src="MODULES/THE%20NATURE%20OF%20FORCE.pdf" title="The Nature of Force PDF"></iframe>
                 </div>
             </div>
 
             <div style="margin-top: 25px;">
-                <div class="showcase-box" style="margin-bottom: 0; max-width: 100%;">
+                <div class="showcase-box" style="height: 580px; max-width: 100%;">
                     <h3>Work, Power, and Energy Module</h3>
                     <p>Core physics module detailing work-energy theorems and energy calculations.</p>
                     <a class="btn-small" href="MODULES/WORK%20POWER%20ENERGY.pdf" target="_blank">Open Full Screen PDF</a>
-                    <iframe src="MODULES/WORK%20POWER%20ENERGY.pdf" title="Work Power Energy PDF" style="height: 450px;"></iframe>
+                    <iframe src="MODULES/WORK%20POWER%20ENERGY.pdf" title="Work Power Energy PDF"></iframe>
                 </div>
             </div>
         </section>
 
+        <!-- Sample Works / Apps & Presentations Section -->
         <section id="projects">
             <h2>Sample Works & Apps</h2>
 
             <div class="grid-3">
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>Training Module PDF</h3>
-                    <p style="font-size: 0.9rem;">Instructional design training document.</p>
+                    <p style="font-size: 0.85rem;">Instructional design training document.</p>
                     <a class="btn-small" href="Training%20Module.pdf" target="_blank">Open PDF</a>
-                    <iframe src="Training%20Module.pdf" style="height: 300px;" title="Training Module PDF"></iframe>
+                    <iframe src="Training%20Module.pdf" title="Training Module PDF"></iframe>
                 </div>
 
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>HIPAA Training</h3>
-                    <p style="font-size: 0.9rem;">Privacy standards slides.</p>
-                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSJx00jzvcI_0ciBK7_8w0BBvRHNdaltB4gg5_eCtnkKSupJWrvOL9RkJ58yFKgzBQuCwzt9csX6bVB/pubembed?start=false&loop=false&delayms=3000" style="height: 300px;" allowfullscreen="true"></iframe>
+                    <p style="font-size: 0.85rem;">Privacy standards slides.</p>
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSJx00jzvcI_0ciBK7_8w0BBvRHNdaltB4gg5_eCtnkKSupJWrvOL9RkJ58yFKgzBQuCwzt9csX6bVB/pubembed?start=false&loop=false&delayms=3000" allowfullscreen="true"></iframe>
                 </div>
 
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>Training Simulation</h3>
-                    <p style="font-size: 0.9rem;">Gamified training environment.</p>
+                    <p style="font-size: 0.85rem;">Gamified training environment.</p>
                     <a class="btn-small" href="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" target="_blank">Open App</a>
-                    <iframe src="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" style="height: 300px;" title="Gamified Training Simulation"></iframe>
+                    <iframe src="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" title="Gamified Training Simulation"></iframe>
                 </div>
             </div>
 
             <div style="margin-top: 25px;" class="grid-3">
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box">
                     <h3>Electricity Lab</h3>
-                    <p style="font-size: 0.9rem;">Interactive lab simulation.</p>
+                    <p style="font-size: 0.85rem;">Interactive lab simulation.</p>
                     <a class="btn-small" href="https://wilmar007.github.io/electricity-lab-app/" target="_blank">Open App</a>
-                    <iframe src="https://wilmar007.github.io/electricity-lab-app/" style="height: 300px;" title="Electricity Lab App"></iframe>
+                    <iframe src="https://wilmar007.github.io/electricity-lab-app/" title="Electricity Lab App"></iframe>
                 </div>
 
-                <div class="showcase-box" style="margin-bottom: 0; grid-column: span 2;">
+                <div class="showcase-box" style="grid-column: span 2;">
                     <h3>Natural Selection Simulation</h3>
-                    <p>Educational simulation exploring evolutionary biology concepts.</p>
+                    <p style="font-size: 0.85rem;">Educational simulation exploring evolutionary biology concepts.</p>
                     <a class="btn-small" href="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" target="_blank">Open App in Full Screen</a>
-                    <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation" style="height: 300px;"></iframe>
+                    <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation"></iframe>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" style="border-bottom: none;">
             <h2>Let's Work Together</h2>
             <div class="contact-box">
@@ -500,6 +519,7 @@
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Wilmar M. Matawaran. All rights reserved.</p>
     </footer>
