@@ -138,7 +138,7 @@
 
         /* Container Sections */
         .container {
-            max-width: 1300px; /* Expanded slightly to comfortably fit 4 columns */
+            max-width: 1300px;
             margin: 0 auto;
             padding: 60px 20px;
         }
@@ -326,7 +326,6 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <div class="logo">WILMAR.PORTFOLIO</div>
         <ul>
@@ -339,7 +338,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="profile-img-container">
             <img src="WILMAR.png" alt="Wilmar M. Matawaran" class="profile-img">
@@ -352,7 +350,6 @@
 
     <div class="container">
 
-        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
@@ -361,7 +358,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services">
             <h2>Services & Expertise</h2>
             <div class="grid-3">
@@ -380,7 +376,6 @@
             </div>
         </section>
 
-        <!-- Tools & Technologies Section -->
         <section id="tools">
             <h2>Tools & Technologies</h2>
             <div class="tools-grid">
@@ -407,7 +402,6 @@
             </div>
         </section>
 
-        <!-- Learning Modules (PDFs) Section in 4 Columns -->
         <section id="modules">
             <h2>Learning Modules (PDFs)</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
@@ -452,11 +446,17 @@
             </div>
         </section>
 
-        <!-- Sample Works / Apps & Presentations Section -->
         <section id="projects">
             <h2>Sample Works & Apps</h2>
 
             <div class="grid-3">
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Training Module PDF</h3>
+                    <p style="font-size: 0.9rem;">Instructional design training document.</p>
+                    <a class="btn-small" href="MODULES/Training%20Module.pdf" target="_blank">Open PDF</a>
+                    <iframe src="MODULES/Training%20Module.pdf" style="height: 300px;" title="Training Module PDF"></iframe>
+                </div>
+
                 <div class="showcase-box" style="margin-bottom: 0;">
                     <h3>HIPAA Training</h3>
                     <p style="font-size: 0.9rem;">Privacy standards slides.</p>
@@ -469,26 +469,25 @@
                     <a class="btn-small" href="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" target="_blank">Open App</a>
                     <iframe src="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" style="height: 300px;" title="Gamified Training Simulation"></iframe>
                 </div>
+            </div>
 
+            <div style="margin-top: 25px;" class="grid-3">
                 <div class="showcase-box" style="margin-bottom: 0;">
                     <h3>Electricity Lab</h3>
                     <p style="font-size: 0.9rem;">Interactive lab simulation.</p>
                     <a class="btn-small" href="https://wilmar007.github.io/electricity-lab-app/" target="_blank">Open App</a>
                     <iframe src="https://wilmar007.github.io/electricity-lab-app/" style="height: 300px;" title="Electricity Lab App"></iframe>
                 </div>
-            </div>
 
-            <div style="margin-top: 25px;">
-                <div class="showcase-box" style="margin-bottom: 0;">
+                <div class="showcase-box" style="margin-bottom: 0; grid-column: span 2;">
                     <h3>Natural Selection Simulation</h3>
                     <p>Educational simulation exploring evolutionary biology concepts.</p>
                     <a class="btn-small" href="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" target="_blank">Open App in Full Screen</a>
-                    <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation" style="height: 450px;"></iframe>
+                    <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation" style="height: 300px;"></iframe>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" style="border-bottom: none;">
             <h2>Let's Work Together</h2>
             <div class="contact-box">
@@ -501,7 +500,6 @@
 
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Wilmar M. Matawaran. All rights reserved.</p>
     </footer>
