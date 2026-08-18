@@ -174,7 +174,7 @@
             margin-bottom: 20px;
         }
 
-        /* Tools Badges */
+        /* Tools Badges with Logos */
         .tools-grid {
             display: flex;
             flex-wrap: wrap;
@@ -184,12 +184,28 @@
         }
 
         .tool-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 10px;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.95ricm;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .tool-badge:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .tool-badge svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent);
+            flex-shrink: 0;
         }
 
         /* Interactive Showcase Boxes (PDFs & Apps) */
@@ -266,7 +282,6 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <div class="logo">WILMAR.PORTFOLIO</div>
         <ul>
@@ -279,28 +294,24 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
-        <!-- Uses your uploaded profile picture -->
         <img src="WILMAR.jpg" alt="Wilmar M. Matawaran" class="profile-img">
         <h1>Wilmar M. Matawaran</h1>
         <p class="subtitle">Educator & Instructional Designer</p>
-        <p class="bio">Results-driven professional specializing in curriculum development, educator training, and translating complex technical concepts into engaging, learner-centered digital training materials[cite: 1].</p>
+        <p class="bio">Results-driven professional specializing in curriculum development, educator training, and translating complex technical concepts into engaging, learner-centered digital training materials.</p>
         <a href="#modules" class="btn-primary">Explore My Work</a>
     </header>
 
     <div class="container">
 
-        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
-                <p>I have a combined background in education and technical instructional design[cite: 1]. Currently serving as a Senior High School Science Teacher at Sumulong Memorial High School[cite: 1], I focus on simplifying difficult scientific concepts, building interactive digital modules, and driving continuous performance improvement[cite: 1].</p>
-                <p>I hold a Master of Arts in Teaching (Science) from the University of Rizal System and bring robust expertise in blending classroom pedagogy with modern technology-based tools[cite: 1].</p>
+                <p>I have a combined background in education and technical instructional design. Currently serving as a Senior High School Science Teacher at Sumulong Memorial High School, I focus on simplifying difficult scientific concepts, building interactive digital modules, and driving continuous performance improvement.</p>
+                <p>I hold a Master of Arts in Teaching (Science) from the University of Rizal System and bring robust expertise in blending classroom pedagogy with modern technology-based tools.</p>
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services">
             <h2>Services & Expertise</h2>
             <div class="grid-3">
@@ -314,24 +325,37 @@
                 </div>
                 <div class="card">
                     <h3>Training & Facilitation</h3>
-                    <p>Translating complex technical procedures into learner-centered training materials grounded in adult learning principles[cite: 1].</p>
+                    <p>Translating complex technical procedures into learner-centered training materials grounded in adult learning principles.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Tools Section -->
         <section id="tools">
             <h2>Tools & Technologies</h2>
             <div class="tools-grid">
-                <div class="tool-badge">Microsoft Office</div>
-                <div class="tool-badge">Canva & Visual Design</div>
-                <div class="tool-badge">AI-Assisted Content Development</div>
-                <div class="tool-badge">HTML / CSS / GitHub Pages</div>
-                <div class="tool-badge">Digital Content & Video creation</div>
+                <div class="tool-badge">
+                    <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3m10 0h8v8h-8V3M3 13h8v8H3v-8m10 0h8v8h-8v-8z"/></svg>
+                    Microsoft Office
+                </div>
+                <div class="tool-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    Canva & Visual Design
+                </div>
+                <div class="tool-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8m1-13h-2v4H7v2h4v4h2v-4h4v-2h-4Z"/></svg>
+                    AI-Assisted Content Development
+                </div>
+                <div class="tool-badge">
+                    <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4m5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    HTML / CSS / GitHub Pages
+                </div>
+                <div class="tool-badge">
+                    <svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                    Digital Content & Video Creation
+                </div>
             </div>
         </section>
 
-        <!-- Learning Modules (PDFs) Section -->
         <section id="modules">
             <h2>Learning Modules (PDFs)</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
@@ -372,7 +396,6 @@
             </div>
         </section>
 
-        <!-- Sample Works / Apps & Presentations Section -->
         <section id="projects">
             <h2>Sample Works & Apps</h2>
 
@@ -404,19 +427,17 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" style="border-bottom: none;">
             <h2>Let's Work Together</h2>
             <div class="contact-box">
                 <p>Get in touch for instructional design, curriculum development, or educational tech collaborations.</p>
                 <a href="mailto:wilmarmoreno07@gmail.com" class="contact-email">wilmarmoreno07@gmail.com</a>
-                <p style="margin-top: 15px; font-size: 0.95rem;">Mobile: (+63) 975-052-6741 | Tanay, Rizal, Philippines[cite: 1]</p>
+                <p style="margin-top: 15px; font-size: 0.95rem;">Mobile: (+63) 975-052-6741 | Tanay, Rizal, Philippines</p>
             </div>
         </section>
 
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Wilmar M. Matawaran. All rights reserved.</p>
     </footer>
