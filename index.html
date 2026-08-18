@@ -69,14 +69,14 @@
             color: var(--accent-glow);
         }
 
-        /* Hero Section - Fixed top spacing so image is never cut off */
+        /* Hero Section - Added proper top padding to clear the fixed navbar */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 180px 20px 80px 20px;
+            padding: 190px 20px 80px 20px;
             background: radial-gradient(circle at center, #1e1b4b 0%, #090d16 70%);
         }
 
@@ -317,7 +317,6 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <div class="logo">WILMAR.PORTFOLIO</div>
         <ul>
@@ -330,7 +329,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="profile-img-container">
             <img src="WILMAR.png" alt="Wilmar M. Matawaran" class="profile-img">
@@ -343,7 +341,6 @@
 
     <div class="container">
 
-        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
@@ -352,7 +349,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services">
             <h2>Services & Expertise</h2>
             <div class="grid-3">
@@ -371,7 +367,6 @@
             </div>
         </section>
 
-        <!-- Tools & Technologies Section -->
         <section id="tools">
             <h2>Tools & Technologies</h2>
             <div class="tools-grid">
@@ -398,7 +393,6 @@
             </div>
         </section>
 
-        <!-- Learning Modules (PDFs) Section -->
         <section id="modules">
             <h2>Learning Modules (PDFs)</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
@@ -439,7 +433,6 @@
             </div>
         </section>
 
-        <!-- Sample Works / Apps & Presentations Section -->
         <section id="projects">
             <h2>Sample Works & Apps</h2>
 
@@ -471,7 +464,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" style="border-bottom: none;">
             <h2>Let's Work Together</h2>
             <div class="contact-box">
@@ -484,7 +476,6 @@
 
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Wilmar M. Matawaran. All rights reserved.</p>
     </footer>
