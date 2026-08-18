@@ -76,23 +76,27 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 160px 20px 100px 20px;
+            padding: 160px 20px 80px 20px;
             background: radial-gradient(circle at center, #1e1b4b 0%, #090d16 70%);
         }
 
+        .profile-img-container {
+            margin-bottom: 25px;
+        }
+
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--accent);
-            margin-bottom: 20px;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 35px rgba(168, 85, 247, 0.4);
+            display: block;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin: 10px 0;
+            margin: 15px 0 10px 0;
             font-weight: 800;
             background: linear-gradient(135deg, #ffffff, #cbd5e1);
             -webkit-background-clip: text;
@@ -267,12 +271,26 @@
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-glow);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+            margin-bottom: 10px;
         }
 
         .contact-box p {
             color: var(--text-muted);
             font-size: 1.1rem;
-            margin-bottom: 20px;
+            margin: 0;
         }
 
         .contact-email {
@@ -299,6 +317,7 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo">WILMAR.PORTFOLIO</div>
         <ul>
@@ -311,8 +330,11 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
-        <img src="WILMAR.png" alt="Wilmar M. Matawaran" class="profile-img">
+        <div class="profile-img-container">
+            <img src="WILMAR.png" alt="Wilmar M. Matawaran" class="profile-img">
+        </div>
         <h1>Wilmar M. Matawaran</h1>
         <p class="subtitle">Educator & Instructional Designer</p>
         <p class="bio">Results-driven professional specializing in curriculum development, educator training, and translating complex technical concepts into engaging, learner-centered digital training materials.</p>
@@ -321,6 +343,7 @@
 
     <div class="container">
 
+        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
@@ -329,6 +352,7 @@
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services">
             <h2>Services & Expertise</h2>
             <div class="grid-3">
@@ -347,6 +371,7 @@
             </div>
         </section>
 
+        <!-- Tools & Technologies Section -->
         <section id="tools">
             <h2>Tools & Technologies</h2>
             <div class="tools-grid">
@@ -373,6 +398,7 @@
             </div>
         </section>
 
+        <!-- Learning Modules (PDFs) Section -->
         <section id="modules">
             <h2>Learning Modules (PDFs)</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
@@ -413,6 +439,7 @@
             </div>
         </section>
 
+        <!-- Sample Works / Apps & Presentations Section -->
         <section id="projects">
             <h2>Sample Works & Apps</h2>
 
@@ -444,21 +471,24 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" style="border-bottom: none;">
             <h2>Let's Work Together</h2>
             <div class="contact-box">
+                <!-- Added WILMAR.png picture to bottom contact section -->
+                <img src="WILMAR.png" alt="Wilmar M. Matawaran" class="contact-profile-img">
                 <p>Get in touch for instructional design, curriculum development, or educational tech collaborations.</p>
                 <a href="mailto:wilmarmoreno07@gmail.com" class="contact-email">wilmarmoreno07@gmail.com</a>
-                <p style="margin-top: 15px; font-size: 0.95rem;">Mobile: (+63) 975-052-6741 | Tanay, Rizal, Philippines</p>
+                <p style="margin-top: 5px; font-size: 0.95rem;">Mobile: (+63) 975-052-6741 | Tanay, Rizal, Philippines</p>
             </div>
         </section>
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Wilmar M. Matawaran. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-
