@@ -3,263 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilmar's Professional Portfolio</title>
+    <title>Wilmar M. Matawaran - Professional Portfolio</title>
     <style>
         :root {
-            --card-bg: rgba(255, 255, 255, 0.92);
-            --text-dark: #0f172a;
-            --text-muted: #475569;
+            --bg-dark: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
         }
 
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
-            color: var(--text-dark); 
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+            background-color: var(--bg-dark);
+            color: var(--text-light); 
+            line-height: 1.6;
         }
 
-        /* Small Floating Bubbles Animation */
-        .bubbles-container {
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            pointer-events: none;
+            z-index: 1000;
+            box-sizing: border-box;
+            border-bottom: 1px solid var(--card-border);
         }
 
-        .bubble {
-            position: absolute;
-            bottom: -50px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            animation: riseUp linear infinite;
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
         }
 
-        @keyframes riseUp {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            20% {
-                opacity: 0.8;
-            }
-            80% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-110vh) translateX(30px);
-                opacity: 0;
-            }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Generate multiple bubbles with different sizes, positions, and speeds */
-        .bubble:nth-child(1) { width: 15px; height: 15px; left: 10%; animation-duration: 8s; animation-delay: 0s; }
-        .bubble:nth-child(2) { width: 25px; height: 25px; left: 20%; animation-duration: 12s; animation-delay: 2s; }
-        .bubble:nth-child(3) { width: 10px; height: 10px; left: 35%; animation-duration: 7s; animation-delay: 1s; }
-        .bubble:nth-child(4) { width: 30px; height: 30px; left: 50%; animation-duration: 15s; animation-delay: 4s; }
-        .bubble:nth-child(5) { width: 18px; height: 18px; left: 65%; animation-duration: 9s; animation-delay: 3s; }
-        .bubble:nth-child(6) { width: 12px; height: 12px; left: 80%; animation-duration: 11s; animation-delay: 5s; }
-        .bubble:nth-child(7) { width: 22px; height: 22px; left: 90%; animation-duration: 13s; animation-delay: 1.5s; }
-        .bubble:nth-child(8) { width: 16px; height: 16px; left: 28%; animation-duration: 10s; animation-delay: 6s; }
-        .bubble:nth-child(9) { width: 20px; height: 20px; left: 75%; animation-duration: 14s; animation-delay: 2.5s; }
+        nav ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
 
-        /* Hero Section Styling */
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
         .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 90px 20px 40px 20px;
-            color: #ffffff;
+            padding: 160px 20px 100px 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3rem;
+            margin: 10px 0;
             font-weight: 800;
-            margin: 0 0 15px 0;
-            letter-spacing: -1px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            background: linear-gradient(90deg, #38bdf8, #818cf8, #f472b6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: #cbd5e1;
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .hero p.bio {
             max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.6;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            color: var(--text-muted);
+            margin-bottom: 30px;
         }
 
-        /* Project Section Container */
+        .btn-primary {
+            display: inline-block;
+            background: var(--text-light);
+            color: var(--bg-dark);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background: var(--accent);
+        }
+
+        /* Container Sections */
         .container {
-            max-width: 1000px; 
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 20px 60px 20px;
+            padding: 60px 20px;
         }
 
-        /* Modern Glassmorphism Cards */
-        .project-box { 
-            background: var(--card-bg); 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 40px; 
-            border-radius: 20px; 
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 255, 255, 0.4) inset; 
-            margin-bottom: 45px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--card-border);
         }
 
-        .project-box:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .project-box h2 {
-            margin-top: 0;
-            color: #0284c7;
-            font-size: 1.9rem;
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
             font-weight: 700;
         }
 
-        .project-box p {
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--text-light);
+            font-size: 1.4rem;
+        }
+
+        .card p {
             color: var(--text-muted);
-            line-height: 1.7;
-            margin-bottom: 25px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Tools Badges */
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tool-badge {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Interactive Showcase Boxes (PDFs & Apps) */
+        .showcase-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .showcase-box h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        a.btn-small {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 8px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        a.btn-small:hover {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            background: #000;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
             font-size: 1.1rem;
+            margin-bottom: 20px;
         }
 
-        /* Styled Button */
-        a.btn { 
-            display: inline-block; 
-            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%); 
-            color: white; 
-            padding: 14px 28px; 
-            text-decoration: none; 
-            border-radius: 10px; 
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+        .contact-email {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
         }
 
-        a.btn:hover { 
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
-        }
-
-        /* Styled iFrame */
-        iframe { 
-            width: 100%; 
-            height: 550px; 
-            border: none; 
-            border-radius: 14px; 
-            margin-top: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            background-color: #000;
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Small Floating Bubbles Background Elements -->
-    <div class="bubbles-container">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-    </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">WILMAR.PORTFOLIO</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#projects">Sample Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Hero Section -->
-    <div class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my interactive presentations and custom educational software applications built for discovery.</p>
-    </div>
+    <header class="hero">
+        <!-- Uses your uploaded profile picture -->
+        <img src="WILMAR.jpg" alt="Wilmar M. Matawaran" class="profile-img">
+        <h1>Wilmar M. Matawaran</h1>
+        <p class="subtitle">Educator & Instructional Designer</p>
+        <p class="bio">Results-driven professional specializing in curriculum development, educator training, and translating complex technical concepts into engaging, learner-centered digital training materials[cite: 1].</p>
+        <a href="#modules" class="btn-primary">Explore My Work</a>
+    </header>
 
     <div class="container">
-        <!-- Circular Motion PDF -->
-        <div class="project-box">
-            <h2>Circular Motion Module</h2>
-            <p>Review the circular motion learning module directly below or open it in full screen.</p>
-            <a class="btn" href="MODULES/CIRCULAR%20MOTION.pdf" target="_blank">Open PDF in Full Screen</a>
-            <iframe src="MODULES/CIRCULAR%20MOTION.pdf" title="Circular Motion PDF"></iframe>
-        </div>
 
-        <!-- Electricity PDF -->
-        <div class="project-box">
-            <h2>Electricity Module</h2>
-            <p>Review the electricity learning module directly below or open it in full screen.</p>
-            <a class="btn" href="MODULES/ELECTRICITY.pdf" target="_blank">Open PDF in Full Screen</a>
-            <iframe src="MODULES/ELECTRICITY.pdf" title="Electricity PDF"></iframe>
-        </div>
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
+                <p>I have a combined background in education and technical instructional design[cite: 1]. Currently serving as a Senior High School Science Teacher at Sumulong Memorial High School[cite: 1], I focus on simplifying difficult scientific concepts, building interactive digital modules, and driving continuous performance improvement[cite: 1].</p>
+                <p>I hold a Master of Arts in Teaching (Science) from the University of Rizal System and bring robust expertise in blending classroom pedagogy with modern technology-based tools[cite: 1].</p>
+            </div>
+        </section>
 
-        <!-- Light Sound and Heat PDF -->
-        <div class="project-box">
-            <h2>Light, Sound, and Heat Module</h2>
-            <p>Review the light, sound, and heat learning module directly below or open it in full screen.</p>
-            <a class="btn" href="MODULES/Light%20Sound%20and%20Heat.pdf" target="_blank">Open PDF in Full Screen</a>
-            <iframe src="MODULES/Light%20Sound%20and%20Heat.pdf" title="Light Sound and Heat PDF"></iframe>
-        </div>
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Services & Expertise</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Curriculum & Module Design</h3>
+                    <p>Developing structured learning frameworks, curriculum maps, and comprehensive educational PDF modules.</p>
+                </div>
+                <div class="card">
+                    <h3>Interactive Simulations</h3>
+                    <p>Building web-based scientific simulations, gamified training environments, and lab apps for active discovery.</p>
+                </div>
+                <div class="card">
+                    <h3>Training & Facilitation</h3>
+                    <p>Translating complex technical procedures into learner-centered training materials grounded in adult learning principles[cite: 1].</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- The Nature of Force PDF -->
-        <div class="project-box">
-            <h2>The Nature of Force Module</h2>
-            <p>Review the nature of force learning module directly below or open it in full screen.</p>
-            <a class="btn" href="MODULES/THE%20NATURE%20OF%20FORCE.pdf" target="_blank">Open PDF in Full Screen</a>
-            <iframe src="MODULES/THE%20NATURE%20OF%20FORCE.pdf" title="The Nature of Force PDF"></iframe>
-        </div>
+        <!-- Tools Section -->
+        <section id="tools">
+            <h2>Tools & Technologies</h2>
+            <div class="tools-grid">
+                <div class="tool-badge">Microsoft Office</div>
+                <div class="tool-badge">Canva & Visual Design</div>
+                <div class="tool-badge">AI-Assisted Content Development</div>
+                <div class="tool-badge">HTML / CSS / GitHub Pages</div>
+                <div class="tool-badge">Digital Content & Video creation</div>
+            </div>
+        </section>
 
-        <!-- Work Power Energy PDF -->
-        <div class="project-box">
-            <h2>Work, Power, and Energy Module</h2>
-            <p>Review the work, power, and energy learning module directly below or open it in full screen.</p>
-            <a class="btn" href="MODULES/WORK%20POWER%20ENERGY.pdf" target="_blank">Open PDF in Full Screen</a>
-            <iframe src="MODULES/WORK%20POWER%20ENERGY.pdf" title="Work Power Energy PDF"></iframe>
-        </div>
+        <!-- Learning Modules (PDFs) Section -->
+        <section id="modules">
+            <h2>Learning Modules (PDFs)</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
 
-        <!-- Presentation Section -->
-        <div class="project-box">
-            <h2>HIPAA Privacy Training Module</h2>
-            <p>Review the interactive presentation slides below.</p>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSJx00jzvcI_0ciBK7_8w0BBvRHNdaltB4gg5_eCtnkKSupJWrvOL9RkJ58yFKgzBQuCwzt9csX6bVB/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="550" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        </div>
+            <div class="showcase-box">
+                <h3>Circular Motion Module</h3>
+                <p>Detailed learning module covering the fundamental principles of circular motion.</p>
+                <a class="btn-small" href="MODULES/CIRCULAR%20MOTION.pdf" target="_blank">Open Full Screen PDF</a>
+                <iframe src="MODULES/CIRCULAR%20MOTION.pdf" title="Circular Motion PDF"></iframe>
+            </div>
 
-        <!-- Gamified Training Simulation Section -->
-        <div class="project-box">
-            <h2>Gamified Training Simulation</h2>
-            <p>An interactive gamified training simulation built for immersive learning.</p>
-            <a class="btn" href="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" target="_blank">Open Simulation in Full Screen</a>
-            <iframe src="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" title="Gamified Training Simulation"></iframe>
-        </div>
+            <div class="showcase-box">
+                <h3>Electricity Module</h3>
+                <p>Comprehensive guide and instructional notes on electrical concepts.</p>
+                <a class="btn-small" href="MODULES/ELECTRICITY.pdf" target="_blank">Open Full Screen PDF</a>
+                <iframe src="MODULES/ELECTRICITY.pdf" title="Electricity PDF"></iframe>
+            </div>
 
-        <!-- Electricity Lab App Section -->
-        <div class="project-box">
-            <h2>Electricity Lab App</h2>
-            <p>An interactive educational simulation app built for science exploration and hands-on learning.</p>
-            <a class="btn" href="https://wilmar007.github.io/electricity-lab-app/" target="_blank">Open App in Full Screen</a>
-            <iframe src="https://wilmar007.github.io/electricity-lab-app/" title="Electricity Lab App"></iframe>
-        </div>
+            <div class="showcase-box">
+                <h3>Light, Sound, and Heat Module</h3>
+                <p>Exploring thermodynamics, optics, and wave characteristics.</p>
+                <a class="btn-small" href="MODULES/Light%20Sound%20and%20Heat.pdf" target="_blank">Open Full Screen PDF</a>
+                <iframe src="MODULES/Light%20Sound%20and%20Heat.pdf" title="Light Sound and Heat PDF"></iframe>
+            </div>
 
-        <!-- Natural Selection Simulation Section -->
-        <div class="project-box">
-            <h2>Natural Selection Simulation</h2>
-            <p>An interactive educational simulation exploring natural selection and evolutionary concepts.</p>
-            <a class="btn" href="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" target="_blank">Open Simulation in Full Screen</a>
-            <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation"></iframe>
-        </div>
+            <div class="showcase-box">
+                <h3>The Nature of Force Module</h3>
+                <p>Foundational concepts regarding forces and mechanical interactions.</p>
+                <a class="btn-small" href="MODULES/THE%20NATURE%20OF%20FORCE.pdf" target="_blank">Open Full Screen PDF</a>
+                <iframe src="MODULES/THE%20NATURE%20OF%20FORCE.pdf" title="The Nature of Force PDF"></iframe>
+            </div>
+
+            <div class="showcase-box">
+                <h3>Work, Power, and Energy Module</h3>
+                <p>Core physics module detailing work-energy theorems and energy calculations.</p>
+                <a class="btn-small" href="MODULES/WORK%20POWER%20ENERGY.pdf" target="_blank">Open Full Screen PDF</a>
+                <iframe src="MODULES/WORK%20POWER%20ENERGY.pdf" title="Work Power Energy PDF"></iframe>
+            </div>
+        </section>
+
+        <!-- Sample Works / Apps & Presentations Section -->
+        <section id="projects">
+            <h2>Sample Works & Apps</h2>
+
+            <div class="showcase-box">
+                <h3>HIPAA Privacy Training Module</h3>
+                <p>Interactive presentation slides outlining privacy standards.</p>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSJx00jzvcI_0ciBK7_8w0BBvRHNdaltB4gg5_eCtnkKSupJWrvOL9RkJ58yFKgzBQuCwzt9csX6bVB/pubembed?start=false&loop=false&delayms=3000" allowfullscreen="true"></iframe>
+            </div>
+
+            <div class="showcase-box">
+                <h3>Gamified Training Simulation</h3>
+                <p>An immersive gamified training environment.</p>
+                <a class="btn-small" href="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" target="_blank">Open App in Full Screen</a>
+                <iframe src="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" title="Gamified Training Simulation"></iframe>
+            </div>
+
+            <div class="showcase-box">
+                <h3>Electricity Lab App</h3>
+                <p>Interactive science laboratory simulation app.</p>
+                <a class="btn-small" href="https://wilmar007.github.io/electricity-lab-app/" target="_blank">Open App in Full Screen</a>
+                <iframe src="https://wilmar007.github.io/electricity-lab-app/" title="Electricity Lab App"></iframe>
+            </div>
+
+            <div class="showcase-box" style="margin-bottom: 0;">
+                <h3>Natural Selection Simulation</h3>
+                <p>Educational simulation exploring evolutionary biology concepts.</p>
+                <a class="btn-small" href="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" target="_blank">Open App in Full Screen</a>
+                <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation"></iframe>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="border-bottom: none;">
+            <h2>Let's Work Together</h2>
+            <div class="contact-box">
+                <p>Get in touch for instructional design, curriculum development, or educational tech collaborations.</p>
+                <a href="mailto:wilmarmoreno07@gmail.com" class="contact-email">wilmarmoreno07@gmail.com</a>
+                <p style="margin-top: 15px; font-size: 0.95rem;">Mobile: (+63) 975-052-6741 | Tanay, Rizal, Philippines[cite: 1]</p>
+            </div>
+        </section>
+
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Wilmar M. Matawaran. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
