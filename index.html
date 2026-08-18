@@ -89,7 +89,7 @@
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            object-position: top center; /* Anchors to the top so your whole head stays visible and the bottom crops */
+            object-position: top center;
             border: 3px solid var(--accent);
             box-shadow: 0 0 35px rgba(168, 85, 247, 0.4);
             display: block;
@@ -138,7 +138,7 @@
 
         /* Container Sections */
         .container {
-            max-width: 1100px;
+            max-width: 1300px; /* Expanded slightly to comfortably fit 4 columns */
             margin: 0 auto;
             padding: 60px 20px;
         }
@@ -159,6 +159,13 @@
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* 4-Column Grid for Learning Modules */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
 
@@ -258,7 +265,7 @@
 
         iframe {
             width: 100%;
-            height: 500px;
+            height: 400px;
             border: none;
             border-radius: 10px;
             margin-top: 20px;
@@ -400,44 +407,48 @@
             </div>
         </section>
 
-        <!-- Learning Modules (PDFs) Section -->
+        <!-- Learning Modules (PDFs) Section in 4 Columns -->
         <section id="modules">
             <h2>Learning Modules (PDFs)</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
 
-            <div class="showcase-box">
-                <h3>Circular Motion Module</h3>
-                <p>Detailed learning module covering the fundamental principles of circular motion.</p>
-                <a class="btn-small" href="MODULES/CIRCULAR%20MOTION.pdf" target="_blank">Open Full Screen PDF</a>
-                <iframe src="MODULES/CIRCULAR%20MOTION.pdf" title="Circular Motion PDF"></iframe>
+            <div class="grid-4">
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Circular Motion</h3>
+                    <p style="font-size: 0.9rem;">Principles of circular motion.</p>
+                    <a class="btn-small" href="MODULES/CIRCULAR%20MOTION.pdf" target="_blank">Open PDF</a>
+                    <iframe src="MODULES/CIRCULAR%20MOTION.pdf" title="Circular Motion PDF"></iframe>
+                </div>
+
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Electricity</h3>
+                    <p style="font-size: 0.9rem;">Notes on electrical concepts.</p>
+                    <a class="btn-small" href="MODULES/ELECTRICITY.pdf" target="_blank">Open PDF</a>
+                    <iframe src="MODULES/ELECTRICITY.pdf" title="Electricity PDF"></iframe>
+                </div>
+
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Light, Sound, Heat</h3>
+                    <p style="font-size: 0.9rem;">Thermodynamics & optics.</p>
+                    <a class="btn-small" href="MODULES/Light%20Sound%20and%20Heat.pdf" target="_blank">Open PDF</a>
+                    <iframe src="MODULES/Light%20Sound%20and%20Heat.pdf" title="Light Sound and Heat PDF"></iframe>
+                </div>
+
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Nature of Force</h3>
+                    <p style="font-size: 0.9rem;">Forces & mechanical interactions.</p>
+                    <a class="btn-small" href="MODULES/THE%20NATURE%20OF%20FORCE.pdf" target="_blank">Open PDF</a>
+                    <iframe src="MODULES/THE%20NATURE%20OF%20FORCE.pdf" title="The Nature of Force PDF"></iframe>
+                </div>
             </div>
 
-            <div class="showcase-box">
-                <h3>Electricity Module</h3>
-                <p>Comprehensive guide and instructional notes on electrical concepts.</p>
-                <a class="btn-small" href="MODULES/ELECTRICITY.pdf" target="_blank">Open Full Screen PDF</a>
-                <iframe src="MODULES/ELECTRICITY.pdf" title="Electricity PDF"></iframe>
-            </div>
-
-            <div class="showcase-box">
-                <h3>Light, Sound, and Heat Module</h3>
-                <p>Exploring thermodynamics, optics, and wave characteristics.</p>
-                <a class="btn-small" href="MODULES/Light%20Sound%20and%20Heat.pdf" target="_blank">Open Full Screen PDF</a>
-                <iframe src="MODULES/Light%20Sound%20and%20Heat.pdf" title="Light Sound and Heat PDF"></iframe>
-            </div>
-
-            <div class="showcase-box">
-                <h3>The Nature of Force Module</h3>
-                <p>Foundational concepts regarding forces and mechanical interactions.</p>
-                <a class="btn-small" href="MODULES/THE%20NATURE%20OF%20FORCE.pdf" target="_blank">Open Full Screen PDF</a>
-                <iframe src="MODULES/THE%20NATURE%20OF%20FORCE.pdf" title="The Nature of Force PDF"></iframe>
-            </div>
-
-            <div class="showcase-box">
-                <h3>Work, Power, and Energy Module</h3>
-                <p>Core physics module detailing work-energy theorems and energy calculations.</p>
-                <a class="btn-small" href="MODULES/WORK%20POWER%20ENERGY.pdf" target="_blank">Open Full Screen PDF</a>
-                <iframe src="MODULES/WORK%20POWER%20ENERGY.pdf" title="Work Power Energy PDF"></iframe>
+            <div style="margin-top: 25px;">
+                <div class="showcase-box" style="margin-bottom: 0; max-width: 100%;">
+                    <h3>Work, Power, and Energy Module</h3>
+                    <p>Core physics module detailing work-energy theorems and energy calculations.</p>
+                    <a class="btn-small" href="MODULES/WORK%20POWER%20ENERGY.pdf" target="_blank">Open Full Screen PDF</a>
+                    <iframe src="MODULES/WORK%20POWER%20ENERGY.pdf" title="Work Power Energy PDF" style="height: 450px;"></iframe>
+                </div>
             </div>
         </section>
 
@@ -445,31 +456,35 @@
         <section id="projects">
             <h2>Sample Works & Apps</h2>
 
-            <div class="showcase-box">
-                <h3>HIPAA Privacy Training Module</h3>
-                <p>Interactive presentation slides outlining privacy standards.</p>
-                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSJx00jzvcI_0ciBK7_8w0BBvRHNdaltB4gg5_eCtnkKSupJWrvOL9RkJ58yFKgzBQuCwzt9csX6bVB/pubembed?start=false&loop=false&delayms=3000" allowfullscreen="true"></iframe>
+            <div class="grid-3">
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>HIPAA Training</h3>
+                    <p style="font-size: 0.9rem;">Privacy standards slides.</p>
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSJx00jzvcI_0ciBK7_8w0BBvRHNdaltB4gg5_eCtnkKSupJWrvOL9RkJ58yFKgzBQuCwzt9csX6bVB/pubembed?start=false&loop=false&delayms=3000" style="height: 300px;" allowfullscreen="true"></iframe>
+                </div>
+
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Training Simulation</h3>
+                    <p style="font-size: 0.9rem;">Gamified training environment.</p>
+                    <a class="btn-small" href="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" target="_blank">Open App</a>
+                    <iframe src="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" style="height: 300px;" title="Gamified Training Simulation"></iframe>
+                </div>
+
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Electricity Lab</h3>
+                    <p style="font-size: 0.9rem;">Interactive lab simulation.</p>
+                    <a class="btn-small" href="https://wilmar007.github.io/electricity-lab-app/" target="_blank">Open App</a>
+                    <iframe src="https://wilmar007.github.io/electricity-lab-app/" style="height: 300px;" title="Electricity Lab App"></iframe>
+                </div>
             </div>
 
-            <div class="showcase-box">
-                <h3>Gamified Training Simulation</h3>
-                <p>An immersive gamified training environment.</p>
-                <a class="btn-small" href="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" target="_blank">Open App in Full Screen</a>
-                <iframe src="https://wilmar007.github.io/TRAINING-SIMULATION---GAMIFIED/" title="Gamified Training Simulation"></iframe>
-            </div>
-
-            <div class="showcase-box">
-                <h3>Electricity Lab App</h3>
-                <p>Interactive science laboratory simulation app.</p>
-                <a class="btn-small" href="https://wilmar007.github.io/electricity-lab-app/" target="_blank">Open App in Full Screen</a>
-                <iframe src="https://wilmar007.github.io/electricity-lab-app/" title="Electricity Lab App"></iframe>
-            </div>
-
-            <div class="showcase-box" style="margin-bottom: 0;">
-                <h3>Natural Selection Simulation</h3>
-                <p>Educational simulation exploring evolutionary biology concepts.</p>
-                <a class="btn-small" href="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" target="_blank">Open App in Full Screen</a>
-                <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation"></iframe>
+            <div style="margin-top: 25px;">
+                <div class="showcase-box" style="margin-bottom: 0;">
+                    <h3>Natural Selection Simulation</h3>
+                    <p>Educational simulation exploring evolutionary biology concepts.</p>
+                    <a class="btn-small" href="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" target="_blank">Open App in Full Screen</a>
+                    <iframe src="https://wilmar007.github.io/SILANGAN-NATURAL-SELECTION1/" title="Natural Selection Simulation" style="height: 450px;"></iframe>
+                </div>
             </div>
         </section>
 
