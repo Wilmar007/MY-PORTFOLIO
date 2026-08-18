@@ -8,7 +8,8 @@
         :root {
             --bg-dark: #090d16;
             --card-bg: rgba(255, 255, 255, 0.04);
-            --card-border: rgba(168, 85, 247, 0.2);
+            --card-border: rgba(168, 85, 247, 0.5); /* Brighter, more visible border */
+            --card-glow: 0 0 15px rgba(168, 85, 247, 0.25), inset 0 0 15px rgba(56, 189, 248, 0.05); /* Glowing effect */
             --text-light: #ffffff;
             --text-muted: #cbd5e1;
             --accent: #a855f7;       /* Electric Violet */
@@ -38,6 +39,7 @@
             z-index: 1000;
             box-sizing: border-box;
             border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
         }
 
         nav .logo {
@@ -91,7 +93,7 @@
             object-fit: cover;
             object-position: top center;
             border: 3px solid var(--accent);
-            box-shadow: 0 0 35px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
             display: block;
         }
 
@@ -127,13 +129,13 @@
             border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.5);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .btn-primary:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 6px 25px rgba(56, 189, 248, 0.6);
         }
 
         /* Container Sections */
@@ -174,13 +176,14 @@
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 30px;
+            box-shadow: var(--card-glow);
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-glow);
-            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.1);
         }
 
         .card h3 {
@@ -214,13 +217,15 @@
             border-radius: 10px;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: border-color 0.2s, transform 0.2s, background 0.2s;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+            transition: border-color 0.2s, transform 0.2s, background 0.2s, box-shadow 0.2s;
         }
 
         .tool-badge:hover {
             border-color: var(--accent-glow);
             background: rgba(56, 189, 248, 0.05);
             transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
         .tool-badge svg {
@@ -239,8 +244,15 @@
             margin-bottom: 25px;
             display: flex;
             flex-direction: column;
-            height: 520px; /* Consistent height for neat grid layout */
+            height: 520px;
             box-sizing: border-box;
+            box-shadow: var(--card-glow);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .showcase-box:hover {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(56, 189, 248, 0.1);
         }
 
         .showcase-box h3 {
@@ -265,13 +277,14 @@
             font-weight: 500;
             font-size: 0.85rem;
             align-self: flex-start;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
             transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         }
 
         a.btn-small:hover {
             background: var(--accent-glow);
             color: var(--bg-dark);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
         }
 
         iframe {
@@ -294,6 +307,7 @@
             flex-direction: column;
             align-items: center;
             gap: 15px;
+            box-shadow: var(--card-glow);
         }
 
         .contact-profile-img {
@@ -303,7 +317,7 @@
             object-fit: cover;
             object-position: top center;
             border: 3px solid var(--accent-glow);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
             margin-bottom: 10px;
         }
 
