@@ -6,12 +6,13 @@
     <title>Wilmar M. Matawaran - Professional Portfolio</title>
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
+            --bg-dark: #090d16;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(168, 85, 247, 0.2);
+            --text-light: #ffffff;
+            --text-muted: #cbd5e1;
+            --accent: #a855f7;       /* Electric Violet */
+            --accent-glow: #38bdf8;  /* Bright Cyan */
         }
 
         body { 
@@ -29,8 +30,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(12px);
             position: fixed;
             top: 0;
             width: 100%;
@@ -40,10 +41,13 @@
         }
 
         nav .logo {
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.2rem;
             color: var(--text-light);
             letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
@@ -62,7 +66,7 @@
         }
 
         nav ul li a:hover {
-            color: var(--accent);
+            color: var(--accent-glow);
         }
 
         /* Hero Section */
@@ -73,7 +77,7 @@
             justify-content: center;
             text-align: center;
             padding: 160px 20px 100px 20px;
-            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+            background: radial-gradient(circle at center, #1e1b4b 0%, #090d16 70%);
         }
 
         .profile-img {
@@ -83,22 +87,25 @@
             object-fit: cover;
             border: 3px solid var(--accent);
             margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
         }
 
         .hero h1 {
             font-size: 3rem;
             margin: 10px 0;
             font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p.subtitle {
             font-size: 1.2rem;
-            color: var(--accent);
+            color: var(--accent-glow);
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .hero p.bio {
@@ -109,18 +116,19 @@
 
         .btn-primary {
             display: inline-block;
-            background: var(--text-light);
-            color: var(--bg-dark);
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: #ffffff;
             padding: 12px 28px;
             border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
-            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .btn-primary:hover {
             transform: scale(1.05);
-            background: var(--accent);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
         }
 
         /* Container Sections */
@@ -154,12 +162,13 @@
             border: 1px solid var(--card-border);
             border-radius: 16px;
             padding: 30px;
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent);
+            border-color: var(--accent-glow);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
         }
 
         .card h3 {
@@ -192,19 +201,20 @@
             padding: 12px 20px;
             border-radius: 10px;
             font-weight: 500;
-            font-size: 0.95ricm;
-            transition: border-color 0.2s, transform 0.2s;
+            font-size: 0.95rem;
+            transition: border-color 0.2s, transform 0.2s, background 0.2s;
         }
 
         .tool-badge:hover {
-            border-color: var(--accent);
+            border-color: var(--accent-glow);
+            background: rgba(56, 189, 248, 0.05);
             transform: translateY(-2px);
         }
 
         .tool-badge svg {
             width: 20px;
             height: 20px;
-            fill: var(--accent);
+            fill: var(--accent-glow);
             flex-shrink: 0;
         }
 
@@ -225,19 +235,20 @@
         a.btn-small {
             display: inline-block;
             background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
+            border: 1px solid var(--accent-glow);
+            color: var(--accent-glow);
             padding: 8px 18px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: background 0.2s, color 0.2s;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         }
 
         a.btn-small:hover {
-            background: var(--accent);
+            background: var(--accent-glow);
             color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
         }
 
         iframe {
@@ -265,10 +276,16 @@
         }
 
         .contact-email {
-            color: var(--accent);
+            color: var(--accent-glow);
             font-size: 1.3rem;
             font-weight: 700;
             text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-email:hover {
+            color: var(--accent);
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -282,6 +299,7 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo">WILMAR.PORTFOLIO</div>
         <ul>
@@ -294,6 +312,7 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <img src="WILMAR.jpg" alt="Wilmar M. Matawaran" class="profile-img">
         <h1>Wilmar M. Matawaran</h1>
@@ -304,6 +323,7 @@
 
     <div class="container">
 
+        <!-- About Me Section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="card" style="display: flex; flex-direction: column; gap: 15px;">
@@ -312,6 +332,7 @@
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services">
             <h2>Services & Expertise</h2>
             <div class="grid-3">
@@ -330,25 +351,31 @@
             </div>
         </section>
 
+        <!-- Tools & Technologies Section -->
         <section id="tools">
             <h2>Tools & Technologies</h2>
             <div class="tools-grid">
+                <!-- Microsoft Office -->
                 <div class="tool-badge">
                     <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3m10 0h8v8h-8V3M3 13h8v8H3v-8m10 0h8v8h-8v-8z"/></svg>
                     Microsoft Office
                 </div>
+                <!-- Canva & Design -->
                 <div class="tool-badge">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                     Canva & Visual Design
                 </div>
+                <!-- AI Content -->
                 <div class="tool-badge">
                     <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8m1-13h-2v4H7v2h4v4h2v-4h4v-2h-4Z"/></svg>
                     AI-Assisted Content Development
                 </div>
+                <!-- Code / HTML -->
                 <div class="tool-badge">
                     <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4m5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
                     HTML / CSS / GitHub Pages
                 </div>
+                <!-- Video / Digital Content -->
                 <div class="tool-badge">
                     <svg viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
                     Digital Content & Video Creation
@@ -356,6 +383,7 @@
             </div>
         </section>
 
+        <!-- Learning Modules (PDFs) Section -->
         <section id="modules">
             <h2>Learning Modules (PDFs)</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Browse or open my core physics and science curriculum modules stored in the repository.</p>
@@ -396,6 +424,7 @@
             </div>
         </section>
 
+        <!-- Sample Works / Apps & Presentations Section -->
         <section id="projects">
             <h2>Sample Works & Apps</h2>
 
@@ -427,6 +456,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" style="border-bottom: none;">
             <h2>Let's Work Together</h2>
             <div class="contact-box">
@@ -438,6 +468,7 @@
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Wilmar M. Matawaran. All rights reserved.</p>
     </footer>
